@@ -44,15 +44,18 @@ export const Navbar = () => {
         </NavMenu>
 
         <Flex>
-          {NAVFLEXITEMS.map((item) => (
-            <CircleBtn roundness="full">
-              <Button>
-                <Image src={item.icon} width={16} height={16} alt="icon" />
-              </Button>
-            </CircleBtn>
-          ))}
+          <Flex hideable>
+            {NAVFLEXITEMS.map((item) => (
+              <CircleBtn roundness="full">
+                <Button>
+                  <Image src={item.icon} width={16} height={16} alt="icon" />
+                </Button>
+              </CircleBtn>
+            ))}
 
-          <Button color="tomato">Join now</Button>
+            <Button color="tomato">Join now</Button>
+          </Flex>
+
           <SidebarToggle onClick={() => setShowSidebar(true)}>
             <Image
               src="/images/shopping-cart.png"
@@ -147,13 +150,27 @@ const Flex = styled("div", {
   display: "flex",
   gap: "$1",
   alignItems: "center",
+
+  variants: {
+    hideable: {
+      true: {
+        display: "none",
+
+        "@md": {
+          display: "flex",
+          justifyContent: "end",
+          justifySelf: "flex-end",
+        },
+      },
+    },
+  },
 });
 
 const SidebarToggle = styled("div", {
   display: "block",
   filter: "invert()",
 
-  "@lg": {
+  "@md": {
     display: "none",
   },
 });
@@ -163,6 +180,5 @@ const SidebarInner = styled(motion.div, {
   width: "100%",
   flexDirection: "column",
   justifyContent: "center",
-  // minHeight: "100vh",
   gap: 30,
 });

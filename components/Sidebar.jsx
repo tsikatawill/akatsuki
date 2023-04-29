@@ -1,38 +1,24 @@
+import { NavbarBg, slideIn } from "@/lib/animations";
 import { styled } from "@/stitches.config";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "./Button";
 
 export const Sidebar = ({ children, handleClose, show }) => {
-  const variants = {
-    open: { opacity: 1 },
-    closed: {
-      opacity: 0,
-      pointerEvents: "none",
-    },
-  };
-
   return (
-    <AnimatePresence>
-      <Background
-        onClick={handleClose}
-        variants={variants}
-        transition={{ ease: "easeOut", duration: 0.25 }}
-        animate={show ? "open" : "closed"}
-        exit="closed"
-      >
-        <Button color="tomato" onClick={handleClose}>
-          x
-        </Button>
+    <Background
+      onClick={handleClose}
+      variants={NavbarBg}
+      transition={{ ease: "easeOut", duration: 0.25 }}
+      animate={show ? "show" : "hide"}
+    >
+      <Button color="tomato" onClick={handleClose}>
+        x
+      </Button>
 
-        <Menu
-          animate={show ? { x: 0 } : { x: "100%" }}
-          transition={{ delay: 0.25, ease: "easeOut" }}
-          exit={{ opacity: 0, y: "100%", background: "green" }}
-        >
-          <Content>{children}</Content>
-        </Menu>
-      </Background>
-    </AnimatePresence>
+      <Menu variants={slideIn}>
+        <Content>{children}</Content>
+      </Menu>
+    </Background>
   );
 };
 
@@ -43,6 +29,7 @@ const Background = styled(motion.div, {
   backdropFilter: "blur(4px)",
   position: "fixed",
   inset: 0,
+  zIndex: 99,
 
   "@md": {
     display: "none",
@@ -52,7 +39,7 @@ const Background = styled(motion.div, {
     position: "absolute",
     right: 10,
     top: 10,
-    zIndex: 10,
+    zIndex: 100,
     padding: 0,
     fontSize: 20,
     width: 38,
