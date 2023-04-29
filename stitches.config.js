@@ -5,17 +5,14 @@ export const { styled, globalCss } = createStitches({
     colors: {
       red: "#FF3939",
       inactiveGrey: "#7B7B7B",
+      dark: "#1D1D1F",
     },
-    fontSizes: {
-      1: "14px",
-      2: "16px",
-      3: "20px",
-      4: "24px",
-      5: "32px",
-      6: "36px",
-      7: "40px",
-      8: "48px",
-      9: "64px",
+    space: {
+      1: "1rem",
+      2: "1.5rem",
+      3: "2rem",
+      4: "4rem",
+      5: "5rem",
     },
     fonts: {
       AeonikR: "AeonikR, system-ui, -apple-system, sans-serif",
