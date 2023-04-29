@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Container } from "@/components";
+import { Container, Navbar } from "@/components";
 
 export default function Home() {
   return (
@@ -11,13 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
+
       <main>
-        <Container>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio placeat,
-          est minus quaerat rem, repellendus laboriosam fuga voluptas deleniti
-          qui mollitia ipsa. Accusamus distinctio aut provident earum qui unde
-          consequuntur!
-        </Container>
+        <Container></Container>
       </main>
     </>
   );
