@@ -1,7 +1,7 @@
 import { styled } from "@/stitches.config";
 
 export const Container = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+  return <Wrapper className="container">{children}</Wrapper>;
 };
 
 const Wrapper = styled("div", {
