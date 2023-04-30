@@ -14,7 +14,7 @@ export const HelpCard = ({ step, reverse, title, image }) => {
         viewport={{ once: true }}
       >
         <Text small>{step}</Text>
-        <Heading>{title}</Heading>
+        <Heading regular>{title}</Heading>
       </TextWrapper>
 
       <ImageWrapper
