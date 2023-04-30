@@ -36,3 +36,12 @@ body {
 a {
   text-decoration: none;
 }
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
