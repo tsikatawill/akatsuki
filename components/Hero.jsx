@@ -25,7 +25,7 @@ export const Hero = () => {
         of peace.
       </Description>
 
-      <Flex forButtons>
+      <Flex>
         <Button color="tomato">Join now</Button>
         <Button color="zebra">
           <Flex css={{ gap: 10 }}>
@@ -133,14 +133,13 @@ const Block = styled("span", {
 });
 
 const Description = styled("p", {
-  letterSpacing: 0,
   maxWidth: 535,
   width: "100%",
-  fontSize: "1.5rem",
+  fontSize: "$textRg",
 
   "@md": {
-    fontSize: 40,
-    lineHeight: "50px",
+    fontSize: "$textMd",
+    lineHeight: "$textMd",
   },
 });
 
