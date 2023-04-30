@@ -62,7 +62,7 @@ const TextWrapper = styled(motion.div, {
 
 const ImageWrapper = styled(motion.div, {
   maxWidth: 654,
-  height: 400,
+  height: "auto",
   width: "100%",
   border: "2px solid white",
   objectFit: "contain",
