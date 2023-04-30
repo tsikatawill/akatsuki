@@ -23,7 +23,12 @@ export const HelpCard = ({ step, reverse, title, image }) => {
         initial="initial"
         viewport={{ once: true }}
       >
-        <Image fill src={image} sizes="(max-width: 768px) 500px, 654px" />
+        <Image
+          fill
+          src={image}
+          sizes="(max-width: 768px) 500px, 654px"
+          alt={title}
+        />
       </ImageWrapper>
     </Wrapper>
   );

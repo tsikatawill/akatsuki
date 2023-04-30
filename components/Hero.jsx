@@ -30,7 +30,12 @@ export const Hero = () => {
         <Button color="zebra">
           <Flex css={{ gap: 10 }}>
             Learn more
-            <Image src="/images/arrow-dr.png" width={20} height={20} />
+            <Image
+              src="/images/arrow-dr.png"
+              width={20}
+              height={20}
+              alt="arrow"
+            />
           </Flex>
         </Button>
       </Flex>

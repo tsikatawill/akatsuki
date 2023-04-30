@@ -23,6 +23,7 @@ export const HeadbandRow = ({
             src={band.src}
             width={218}
             height={218}
+            alt={band.name}
           />
         ))}
       </ScrollAnimationWrapper>
@@ -37,10 +38,4 @@ const Wrapper = styled("div", {
 const ScrollAnimationWrapper = styled(motion.div, {
   display: "flex",
   gap: 100,
-});
-
-const ImageWrapper = styled("div", {
-  width: 218,
-  height: 218,
-  flexShrink: 0,
 });
