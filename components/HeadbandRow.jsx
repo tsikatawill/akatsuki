@@ -17,7 +17,13 @@ export const HeadbandRow = ({
         animate="animate"
       >
         {headbands.map((band) => (
-          <Image title={band.name} src={band.src} width={218} height={218} />
+          <Image
+            title={band.name}
+            key={band.name}
+            src={band.src}
+            width={218}
+            height={218}
+          />
         ))}
       </ScrollAnimationWrapper>
     </Wrapper>
