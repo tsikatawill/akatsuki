@@ -36,7 +36,6 @@ export const Navbar = () => {
                 borderBottomColor: "white",
                 transition: { ease: "easeIn" },
               }}
-              key={title}
               active={title === "Home" ? true : false}
             >
               <Link href={href}>{title}</Link>
@@ -47,7 +46,7 @@ export const Navbar = () => {
         <Flex>
           <Flex hideable>
             {NAVFLEXITEMS.map((item) => (
-              <CircleBtn roundness="full">
+              <CircleBtn roundness="full" key={item.icon}>
                 <Button>
                   <Image src={item.icon} width={16} height={16} alt="icon" />
                 </Button>
