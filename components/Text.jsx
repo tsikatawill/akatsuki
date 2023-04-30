@@ -8,4 +8,13 @@ export const Text = styled("p", {
     fontSize: "$textMd",
     lineHeight: "64px",
   },
+
+  variants: {
+    small: {
+      true: {
+        fontSize: "$textSm",
+        lineHeight: "51px",
+      },
+    },
+  },
 });

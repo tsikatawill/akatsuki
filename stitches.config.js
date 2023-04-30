@@ -19,6 +19,7 @@ export const { styled, globalCss } = createStitches({
       headingRg: "2.5rem",
       textMd: "40px",
       textRg: "1.5rem",
+      textSm: "32px",
     },
     lineHeights: {
       headingMd: "80px",
