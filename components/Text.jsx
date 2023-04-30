@@ -10,6 +10,17 @@ export const Text = styled("p", {
   },
 
   variants: {
+    xs: {
+      true: {
+        fontSize: "20px",
+        lineHeight: "unset",
+
+        "@sm": {
+          fontSize: "$textXs",
+          lineHeight: "$textXs",
+        },
+      },
+    },
     small: {
       true: {
         fontSize: "20px",

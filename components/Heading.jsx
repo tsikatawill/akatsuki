@@ -11,6 +11,17 @@ export const Heading = styled("h2", {
   },
 
   variants: {
+    small: {
+      true: {
+        fontSize: "40px",
+        lineHeight: "50px",
+
+        "@sm": {
+          fontSize: "50px",
+          lineHeight: "60px",
+        },
+      },
+    },
     regular: {
       true: {
         fontSize: "50px",

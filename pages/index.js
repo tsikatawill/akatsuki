@@ -2,6 +2,7 @@ import Head from "next/head";
 import {
   About,
   Container,
+  Explore,
   Help,
   Hero,
   Navbar,
@@ -27,6 +28,7 @@ export default function Home() {
           <About />
           <Help />
           <Welcome />
+          <Explore />
           <br />
           <br />
           <br />

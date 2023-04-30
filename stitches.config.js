@@ -20,12 +20,14 @@ export const { styled, globalCss } = createStitches({
       textMd: "40px",
       textRg: "1.5rem",
       textSm: "32px",
+      textXs: "24px",
     },
     lineHeights: {
       headingMd: "80px",
       headingRg: "2.5rem",
       textMd: "50px",
       textRg: "2rem",
+      textXs: "38px",
     },
     fonts: {
       AeonikR: "AeonikR, system-ui, -apple-system, sans-serif",
