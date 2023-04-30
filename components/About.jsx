@@ -29,7 +29,6 @@ export const About = () => {
       <TextDescription>
         <Heading>Who are we?</Heading>
 
-        {/* We&lsquo;re <Important> Akatsuki</Important>, a hidden organisation */}
         <Text>
           We&lsquo;re Akatsuki, a hidden organisation with the simple goal of
           helping lost people find themselves and take life on!!
