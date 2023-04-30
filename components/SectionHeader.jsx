@@ -14,6 +14,7 @@ const Header = styled("div", {
   textAlign: "center",
   marginBottom: 64,
   maxWidth: 1167,
+  margin: "auto",
   display: "flex",
   flexDirection: "column",
   gap: 24,
