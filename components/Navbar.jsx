@@ -30,6 +30,7 @@ export const Navbar = () => {
         <NavMenu>
           {NAVLINKS.map(({ title, href }) => (
             <NavLink
+              key={title}
               initial={{ borderBottomColor: "transparent" }}
               whileHover={{
                 borderBottomColor: "white",

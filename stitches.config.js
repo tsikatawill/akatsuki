@@ -14,6 +14,18 @@ export const { styled, globalCss } = createStitches({
       4: "4rem",
       5: "5rem",
     },
+    fontSizes: {
+      headingMd: "64px",
+      headingRg: "2.5rem",
+      textMd: "40px",
+      textRg: "1.5rem",
+    },
+    lineHeights: {
+      headingMd: "80px",
+      headingRg: "2.5rem",
+      textMd: "50px",
+      textRg: "2rem",
+    },
     fonts: {
       AeonikR: "AeonikR, system-ui, -apple-system, sans-serif",
       AeonikB: "AeonikB, system-ui, -apple-system, sans-serif",
