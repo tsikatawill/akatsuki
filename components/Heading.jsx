@@ -9,4 +9,18 @@ export const Heading = styled("h2", {
     fontSize: "$headingMd",
     lineHeight: "$headingMd",
   },
+
+  variants: {
+    regular: {
+      true: {
+        fontSize: "50px",
+        lineHeight: "60px",
+
+        "@sm": {
+          fontSize: "60px",
+          lineHeight: "70px",
+        },
+      },
+    },
+  },
 });
