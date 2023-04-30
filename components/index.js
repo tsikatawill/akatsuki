@@ -9,3 +9,4 @@ export * from "./Logo";
 export * from "./Navbar";
 export * from "./Sidebar";
 export * from "./Text";
+export * from "./Welcome";
