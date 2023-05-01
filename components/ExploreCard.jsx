@@ -10,12 +10,14 @@ export const ExploreCard = ({ title, image, desc, ...rest }) => {
         <ImageAnimWrapper
           whileHover={{ scale: 1.2, transition: { duration: 0.8 } }}
         >
-          <Image src={image} width="400" height="600" alt="kak" />
+          <Image src={image} width="400" height="600" alt={title} />
         </ImageAnimWrapper>
       </ImageWrapper>
 
       <TextDesc>
-        <Heading small>{title}</Heading>
+        <Heading small css={{ fontSize: 30, lineHeight: "40px" }}>
+          {title}
+        </Heading>
         <Text xs>{desc}</Text>
         <Button color="tomato">Join mission</Button>
       </TextDesc>
@@ -25,6 +27,8 @@ export const ExploreCard = ({ title, image, desc, ...rest }) => {
 
 const Wrapper = styled("div", {
   flexShrink: 0,
+  background: "$red",
+  width: "100%",
   display: "flex",
   scrollSnapAlign: "start",
   gap: 40,
@@ -60,17 +64,20 @@ const ImageAnimWrapper = styled(motion.div, {
 });
 
 const TextDesc = styled("div", {
-  flexShrink: 0,
+  display: "none",
   display: "flex",
   flexDirection: "column",
-  gap: 24,
+  gap: 10,
   alignItems: "center",
   textAlign: "center",
-  maxWidth: 524,
+  maxWidth: 320,
   width: "100%",
 
   "@md": {
+    gap: 24,
     textAlign: "left",
+    maxWidth: 524,
+    flexShrink: 0,
     alignItems: "flex-start",
   },
 });
