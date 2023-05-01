@@ -26,6 +26,7 @@ const Wrapper = styled("section", {
 });
 
 const HelpCards = styled("div", {
+  marginTop: 100,
   display: "flex",
   flexDirection: "column",
   gap: 90,

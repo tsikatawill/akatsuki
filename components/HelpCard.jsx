@@ -23,7 +23,12 @@ export const HelpCard = ({ step, reverse, title, image }) => {
         initial="initial"
         viewport={{ once: true }}
       >
-        <Image fill src={image} sizes="(max-width: 768px) 500px, 654px" />
+        <Image
+          fill
+          src={image}
+          sizes="(max-width: 768px) 500px, 654px"
+          alt={title}
+        />
       </ImageWrapper>
     </Wrapper>
   );
@@ -64,7 +69,7 @@ const ImageWrapper = styled(motion.div, {
   maxWidth: 654,
   height: "auto",
   width: "100%",
-  border: "2px solid white",
+  border: "4px solid white",
   objectFit: "contain",
 
   "@md": {

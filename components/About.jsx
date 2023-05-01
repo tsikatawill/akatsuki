@@ -22,6 +22,7 @@ export const About = () => {
             fill
             sizes="(max-width: 768px) 652px,
           652px"
+            alt="about"
           />
         </ImageAnimationWrapper>
       </ImageWrapper>
@@ -40,7 +41,12 @@ export const About = () => {
           <Button color="zebra">
             <Flex css={{ gap: 10 }}>
               Learn more
-              <Image src="/images/arrow-dr.png" width={20} height={20} />
+              <Image
+                src="/images/arrow-dr.png"
+                width={20}
+                height={20}
+                alt="arrow"
+              />
             </Flex>
           </Button>
         </Flex>

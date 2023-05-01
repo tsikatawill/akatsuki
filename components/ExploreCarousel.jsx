@@ -2,8 +2,11 @@ import { EXPLOREITEMS } from "@/lib/exploreItems";
 import { styled } from "@/stitches.config";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ExploreCard } from ".";
+
+const DIRECTION_LEFT = -1;
+const DIRECTION_RIGHT = 1;
 
 export const ExploreCarousel = () => {
   const scrollRef = useRef(null);
@@ -13,24 +16,14 @@ export const ExploreCarousel = () => {
     scrollRef.current.scrollTo(activeCard * 1000, 0);
   }, [activeCard]);
 
-  useEffect(() => {
-    const Interval = setInterval(() => controlScroll("right"), 5000);
-    return () => clearInterval(Interval);
-  }, [activeCard]);
+  const controlScroll = useCallback((direction) => {
+    setActiveCard((prev) => Math.abs(prev + direction) % EXPLOREITEMS.length);
+  }, []);
 
-  const controlScroll = (direction) => {
-    if (activeCard > -1) {
-      if (direction === "right" && activeCard < EXPLOREITEMS.length - 1) {
-        setActiveCard(activeCard + 1);
-      } else if (direction === "left" && activeCard !== 0) {
-        setActiveCard(activeCard - 1);
-      } else {
-        setActiveCard(0);
-      }
-    } else {
-      setActiveCard(0);
-    }
-  };
+  useEffect(() => {
+    const interval = setInterval(() => controlScroll(DIRECTION_RIGHT), 5000);
+    return () => clearInterval(interval);
+  }, [activeCard, controlScroll]);
 
   return (
     <Wrapper>
@@ -43,13 +36,27 @@ export const ExploreCarousel = () => {
           <ControlButtons>
             <Button
               reverse
+              disabled={activeCard === 0}
               end={activeCard === 0}
-              onClick={() => controlScroll("left")}
+              onClick={() => controlScroll(DIRECTION_LEFT)}
             >
-              <Image src="/images/right-arrow.png" width={70} height={70} />
+              <Image
+                src="/images/right-arrow.png"
+                width={70}
+                height={70}
+                alt="left"
+              />
             </Button>
-            <Button color="tomato" onClick={() => controlScroll("right")}>
-              <Image src="/images/right-arrow.png" width={70} height={70} />
+            <Button
+              color="tomato"
+              onClick={() => controlScroll(DIRECTION_RIGHT)}
+            >
+              <Image
+                src="/images/right-arrow.png"
+                width={70}
+                height={70}
+                alt="right"
+              />
             </Button>
           </ControlButtons>
         </CarouselAnimWrapper>
@@ -67,7 +74,6 @@ const CarouselWrapper = styled("div", {
   marginTop: 100,
   scrollSnapType: "x",
   scrollBehavior: "smooth",
-  marginLeft: 50,
 });
 
 const CarouselAnimWrapper = styled(motion.div, {

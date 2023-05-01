@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "@/stitches.config";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button, Heading, Text } from ".";
@@ -10,7 +10,7 @@ export const ExploreCard = ({ title, image, desc, ...rest }) => {
         <ImageAnimWrapper
           whileHover={{ scale: 1.2, transition: { duration: 0.8 } }}
         >
-          <Image src={image} width="400" height="610" alt="kak" />
+          <Image src={image} width="400" height="600" alt="kak" />
         </ImageAnimWrapper>
       </ImageWrapper>
 
@@ -26,16 +26,32 @@ export const ExploreCard = ({ title, image, desc, ...rest }) => {
 const Wrapper = styled("div", {
   flexShrink: 0,
   display: "flex",
-  alignItems: "center",
   scrollSnapAlign: "start",
   gap: 40,
+  flexDirection: "column",
+  alignItems: "center",
+
+  "@md": {
+    flexDirection: "row",
+  },
 });
 
 const ImageWrapper = styled("div", {
   flexShrink: 0,
-  width: 400,
-  height: 610,
+  width: 300,
+  height: 450,
+  color: "White",
   overflow: "hidden",
+  display: "flex",
+
+  "& img": {
+    width: "100%",
+  },
+
+  "@md": {
+    width: 400,
+    height: 600,
+  },
 });
 
 const ImageAnimWrapper = styled(motion.div, {
@@ -48,7 +64,13 @@ const TextDesc = styled("div", {
   display: "flex",
   flexDirection: "column",
   gap: 24,
-  alignItems: "flex-start",
+  alignItems: "center",
+  textAlign: "center",
   maxWidth: 524,
   width: "100%",
+
+  "@md": {
+    textAlign: "left",
+    alignItems: "flex-start",
+  },
 });
