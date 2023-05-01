@@ -46,11 +46,16 @@ const Wrapper = styled(motion.div, {
 });
 
 const ImageWrapper = styled(motion.div, {
-  width: 560,
-  height: 870,
+  maxWidth: 300,
+
+  "@md": {
+    width: 560,
+    height: 870,
+  },
 
   "& img": {
     objectFit: "contain",
+    width: "100%",
   },
 });
 
