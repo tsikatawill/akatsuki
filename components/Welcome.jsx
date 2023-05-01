@@ -1,5 +1,4 @@
 import { styled } from "@/stitches.config";
-import Image from "next/image";
 import { HeadbandRow, SectionHeader } from ".";
 
 export const Welcome = () => {
@@ -26,5 +25,8 @@ const Headbands = styled("div", {
   marginTop: 12,
   display: "flex",
   flexDirection: "column",
-  gap: 40,
+
+  "@sm": {
+    gap: 40,
+  },
 });

@@ -13,18 +13,12 @@ export const HeadbandRow = ({
     <Wrapper>
       <ScrollAnimationWrapper
         variants={scrollX(scrollFrom, delay)}
-        initial="initial"
         animate="animate"
       >
         {headbands.map((band) => (
-          <Image
-            title={band.name}
-            key={band.name}
-            src={band.src}
-            width={218}
-            height={218}
-            alt={band.name}
-          />
+          <ImageWrapper key={band.name}>
+            <Image title={band.name} src={band.src} fill alt={band.name} />
+          </ImageWrapper>
         ))}
       </ScrollAnimationWrapper>
     </Wrapper>
@@ -37,5 +31,27 @@ const Wrapper = styled("div", {
 
 const ScrollAnimationWrapper = styled(motion.div, {
   display: "flex",
-  gap: 100,
+  gap: 50,
+
+  "@sm": {
+    gap: 100,
+    width: 218,
+    height: 218,
+  },
+});
+
+const ImageWrapper = styled("div", {
+  flexShrink: 0,
+  width: 100,
+  height: 100,
+  position: "relative",
+
+  "& img": {
+    objectFit: "contain",
+  },
+
+  "@sm": {
+    width: 218,
+    height: 218,
+  },
 });

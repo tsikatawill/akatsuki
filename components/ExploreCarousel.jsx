@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ExploreCard } from ".";
 
+const DIRECTION_LEFT = -1;
+const DIRECTION_RIGHT = 1;
+
 export const ExploreCarousel = () => {
   const scrollRef = useRef(null);
   const [activeCard, setActiveCard] = useState(0);
@@ -13,26 +16,13 @@ export const ExploreCarousel = () => {
     scrollRef.current.scrollTo(activeCard * 1000, 0);
   }, [activeCard]);
 
-  const controlScroll = useCallback(
-    (direction) => {
-      if (activeCard > -1) {
-        if (direction === "right" && activeCard < EXPLOREITEMS.length - 1) {
-          setActiveCard(activeCard + 1);
-        } else if (direction === "left" && activeCard !== 0) {
-          setActiveCard(activeCard - 1);
-        } else {
-          setActiveCard(0);
-        }
-      } else {
-        setActiveCard(0);
-      }
-    },
-    [activeCard]
-  );
+  const controlScroll = useCallback((direction) => {
+    setActiveCard((prev) => Math.abs(prev + direction) % EXPLOREITEMS.length);
+  }, []);
 
   useEffect(() => {
-    const Interval = setInterval(() => controlScroll("right"), 5000);
-    return () => clearInterval(Interval);
+    const interval = setInterval(() => controlScroll(DIRECTION_RIGHT), 5000);
+    return () => clearInterval(interval);
   }, [activeCard, controlScroll]);
 
   return (
@@ -46,8 +36,9 @@ export const ExploreCarousel = () => {
           <ControlButtons>
             <Button
               reverse
+              disabled={activeCard === 0}
               end={activeCard === 0}
-              onClick={() => controlScroll("left")}
+              onClick={() => controlScroll(DIRECTION_LEFT)}
             >
               <Image
                 src="/images/right-arrow.png"
@@ -56,7 +47,10 @@ export const ExploreCarousel = () => {
                 alt="left"
               />
             </Button>
-            <Button color="tomato" onClick={() => controlScroll("right")}>
+            <Button
+              color="tomato"
+              onClick={() => controlScroll(DIRECTION_RIGHT)}
+            >
               <Image
                 src="/images/right-arrow.png"
                 width={70}
@@ -80,7 +74,6 @@ const CarouselWrapper = styled("div", {
   marginTop: 100,
   scrollSnapType: "x",
   scrollBehavior: "smooth",
-  marginLeft: 50,
 });
 
 const CarouselAnimWrapper = styled(motion.div, {

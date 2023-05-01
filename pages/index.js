@@ -1,6 +1,7 @@
 import Head from "next/head";
 import {
   About,
+  Advice,
   Container,
   Explore,
   Help,
@@ -29,6 +30,7 @@ export default function Home() {
           <Help />
           <Welcome />
           <Explore />
+          <Advice />
           <br />
           <br />
           <br />

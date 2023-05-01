@@ -69,7 +69,7 @@ const ImageWrapper = styled(motion.div, {
   maxWidth: 654,
   height: "auto",
   width: "100%",
-  border: "2px solid white",
+  border: "4px solid white",
   objectFit: "contain",
 
   "@md": {

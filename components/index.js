@@ -1,3 +1,5 @@
+export * from "./Advice";
+export * from "./AdviceCard";
 export * from "./About";
 export * from "./Button";
 export * from "./Container";
