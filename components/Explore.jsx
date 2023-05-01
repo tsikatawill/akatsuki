@@ -1,6 +1,7 @@
+import { EXPLOREITEMS } from "@/lib/exploreItems";
 import { styled } from "@/stitches.config";
 
-import { ExploreCarousel, SectionHeader } from ".";
+import { Carousel, ExploreCard, SectionHeader } from ".";
 
 export const Explore = () => {
   return (
@@ -10,7 +11,11 @@ export const Explore = () => {
         description=" Join elite akatsuki members and take on enemies while you get stronger along the way"
       />
 
-      <ExploreCarousel />
+      <Carousel scrollBy={1000} scrollItems={EXPLOREITEMS}>
+        {EXPLOREITEMS.map((item) => (
+          <ExploreCard key={item.title} {...item} />
+        ))}
+      </Carousel>
     </Wrapper>
   );
 };
