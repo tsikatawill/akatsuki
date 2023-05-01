@@ -6,6 +6,7 @@ import {
   Explore,
   Help,
   Hero,
+  Merch,
   Navbar,
   Text,
   Welcome,
@@ -31,21 +32,13 @@ export default function Home() {
           <Welcome />
           <Explore />
           <Advice />
+          <Merch />
           <br />
           <br />
           <br />
           <br />
           <br />
           <Text>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
-            beatae explicabo praesentium animi deserunt dolore similique rerum
-            eveniet incidunt. Labore corrupti culpa officia, modi iure magni,
-            voluptate exercitationem inventore dolore ex voluptas nisi officiis
-            nihil velit suscipit nulla mollitia. Debitis, corrupti. Commodi ad
-            neque nulla velit quas adipisci quo vel aspernatur totam, placeat
-            explicabo? Quos fugiat corrupti quis iure rem maiores eligendi
-            voluptatibus dicta, reprehenderit quibusdam accusamus veniam impedit
-            commodi soluta blanditiis doloremque. Temporibus consectetur, modi
             commodi nobis fuga ipsa ullam a pariatur earum ut tenetur deserunt
             et perspiciatis obcaecati itaque? Aperiam sit, vitae dolorem impedit
             quibusdam nesciunt provident veniam sunt. Deserunt ipsa ipsam odio
