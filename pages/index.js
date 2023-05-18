@@ -8,6 +8,7 @@ import {
   Hero,
   Merch,
   Navbar,
+  Newsletter,
   Text,
   Welcome,
 } from "@/components";
@@ -33,29 +34,9 @@ export default function Home() {
           <Explore />
           <Advice />
           <Merch />
+          <Newsletter />
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <Text>
-            commodi nobis fuga ipsa ullam a pariatur earum ut tenetur deserunt
-            et perspiciatis obcaecati itaque? Aperiam sit, vitae dolorem impedit
-            quibusdam nesciunt provident veniam sunt. Deserunt ipsa ipsam odio
-            quibusdam quo rerum, esse assumenda amet? Animi, nostrum consequatur
-            sunt facere impedit excepturi quos accusantium odio nisi magni velit
-            alias aliquid eius totam rem rerum, suscipit repudiandae, beatae
-            deleniti laudantium perferendis vitae non! Quod modi corporis est
-            laborum voluptatibus quasi facilis assumenda consequuntur. Soluta
-            nulla esse, perferendis laborum modi harum autem illo, quibusdam
-            labore animi, nisi officiis nemo tempore praesentium? Eligendi,
-            velit voluptatibus earum praesentium aspernatur ipsum tempora
-            sapiente totam vel. Mollitia, fugit. Nemo impedit quidem fugiat
-            dolorem quo atque nisi nostrum, dignissimos iure perferendis est
-            accusamus vel, alias id eius expedita voluptatem voluptatum ratione
-            cumque debitis deleniti. Animi dicta suscipit illo ducimus
-            necessitatibus! Explicabo, rerum
-          </Text>
         </Container>
       </main>
     </>
