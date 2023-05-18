@@ -30,7 +30,7 @@ export const Carousel = ({ children, scrollItems, scrollBy }) => {
   return (
     <Wrapper>
       <CarouselWrapper className="hidden-scrollbar" ref={scrollRef}>
-        <CarouselAnimWrapper initial={{ x: 0 }}>
+        <CarouselAnimWrapper>
           {children}
 
           <ControlButtons>
