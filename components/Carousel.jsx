@@ -83,6 +83,7 @@ const CarouselWrapper = styled("div", {
 const CarouselAnimWrapper = styled(motion.div, {
   display: "flex",
   width: "100%",
+  alignItems: "start",
   gap: 100,
 });
 
