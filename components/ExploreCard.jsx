@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button, Heading, Text } from ".";
 
-export const ExploreCard = ({ title, image, desc, ...rest }) => {
+export const ExploreCard = ({ title, image, desc, innerRef, ...rest }) => {
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...rest} ref={innerRef}>
       <ImageWrapper>
         <ImageAnimWrapper
           whileHover={{ scale: 1.2, transition: { duration: 0.8 } }}
@@ -27,10 +27,8 @@ export const ExploreCard = ({ title, image, desc, ...rest }) => {
 
 const Wrapper = styled("div", {
   flexShrink: 0,
-  background: "$red",
-  width: "100%",
   display: "flex",
-  scrollSnapAlign: "start",
+  scrollSnapAlign: "center",
   gap: 40,
   flexDirection: "column",
   alignItems: "center",
@@ -42,8 +40,8 @@ const Wrapper = styled("div", {
 
 const ImageWrapper = styled("div", {
   flexShrink: 0,
-  width: 300,
-  height: 450,
+  maxWidth: 350,
+  height: 500,
   color: "White",
   overflow: "hidden",
   display: "flex",
@@ -53,6 +51,7 @@ const ImageWrapper = styled("div", {
   },
 
   "@md": {
+    maxWidth: "unset",
     width: 400,
     height: 600,
   },
@@ -76,7 +75,7 @@ const TextDesc = styled("div", {
   "@md": {
     gap: 24,
     textAlign: "left",
-    maxWidth: 524,
+    width: 524,
     flexShrink: 0,
     alignItems: "flex-start",
   },
