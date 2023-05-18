@@ -6,6 +6,7 @@ export * from "./Carousel";
 export * from "./Container";
 export * from "./Explore";
 export * from "./ExploreCard";
+export * from "./Footer";
 export * from "./HeadbandRow";
 export * from "./Heading";
 export * from "./Help";

@@ -9,7 +9,7 @@ import {
   Merch,
   Navbar,
   Newsletter,
-  Text,
+  Footer,
   Welcome,
 } from "@/components";
 
@@ -35,8 +35,7 @@ export default function Home() {
           <Advice />
           <Merch />
           <Newsletter />
-          <br />
-          <br />
+          <Footer />
         </Container>
       </main>
     </>
