@@ -18,10 +18,9 @@ export default function Home() {
     <>
       <Head>
         <meta property="og:title" content="Akatsuki" />
-        <meta name="image" property="og:image" content="/images/hero.jpg" />
+        <meta name="image" content="https://i.postimg.cc/PJ2kNb1V/hero.jpg" />
         <meta
           name="property"
-          property="og:description"
           content="Safe haven for rogue ninjas from all corners of the world for tha sake of peace."
         />
         <meta
