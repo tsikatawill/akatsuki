@@ -42,7 +42,7 @@ const Wrapper = styled(motion.button, {
         backgroundColor: "$red",
 
         "&:hover": {
-          border: "1px solid $redHover",
+          border: "1px solid $red",
           color: "$red",
           background: "transparent",
         },
