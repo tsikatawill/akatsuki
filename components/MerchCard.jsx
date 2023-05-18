@@ -2,6 +2,7 @@ import { styled } from "@/stitches.config";
 import React from "react";
 import { Button, Heading, Text } from ".";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const MerchCard = ({
   currentPrice,
@@ -14,24 +15,24 @@ export const MerchCard = ({
   ...rest
 }) => {
   return (
-    <MerchWrapper {...rest} ref={innerRef}>
+    <Wrapper {...rest} ref={innerRef}>
       {topSeller && (
-        <MerchTopSeller>
+        <TopSeller>
           <Text xs css={{ fontWeight: 700 }}>
             Top Seller
           </Text>
-        </MerchTopSeller>
+        </TopSeller>
       )}
 
-      <MerchImageWrapper>
+      <ImageWrapper>
         <Image src={image} alt={title} fill sizes="(max-width: 768px) 600px" />
-      </MerchImageWrapper>
+      </ImageWrapper>
 
-      <MerchTextWrapper>
+      <TextWrapper initial={{ height: 250 }} whileHover={{ height: "auto" }}>
         <Text>{title}</Text>
         <Text xs>{description}</Text>
 
-        <MerchFlex css={{ marginBottom: 40 }}>
+        <Flex css={{ marginBottom: 40 }}>
           <Heading
             css={{
               fontFamily: "$AeonikB",
@@ -47,19 +48,20 @@ export const MerchCard = ({
           >
             ${oldPrice}
           </Text>
-        </MerchFlex>
+        </Flex>
 
-        <MerchFlex>
+        <Flex>
           <Button color="tomato">Add to cart</Button>
           <Button color="zebra">Buy now</Button>
-        </MerchFlex>
-      </MerchTextWrapper>
-    </MerchWrapper>
+        </Flex>
+      </TextWrapper>
+    </Wrapper>
   );
 };
 
-const MerchWrapper = styled("div", {
+const Wrapper = styled("div", {
   scrollSnapAlign: "center",
+  background: "rgba(24, 24, 25, 0.25)",
   flexShrink: 0,
   maxWidth: 600,
   width: "100%",
@@ -71,7 +73,7 @@ const MerchWrapper = styled("div", {
   },
 });
 
-const MerchImageWrapper = styled("div", {
+const ImageWrapper = styled("div", {
   width: "100%",
   minHeight: 300,
   borderBottom: "1px solid white",
@@ -89,7 +91,7 @@ const MerchImageWrapper = styled("div", {
   },
 });
 
-const MerchTopSeller = styled("div", {
+const TopSeller = styled("div", {
   position: "absolute",
   top: 10,
   left: 10,
@@ -105,7 +107,7 @@ const MerchTopSeller = styled("div", {
   },
 });
 
-const MerchTextWrapper = styled("div", {
+const TextWrapper = styled(motion.div, {
   padding: 15,
   display: "flex",
   flexDirection: "column",
@@ -117,7 +119,7 @@ const MerchTextWrapper = styled("div", {
   },
 });
 
-const MerchFlex = styled("div", {
+const Flex = styled("div", {
   display: "flex",
   gap: 10,
   alignItems: "center",
