@@ -46,7 +46,8 @@ const Wrapper = styled(motion.div, {
 });
 
 const ImageWrapper = styled(motion.div, {
-  maxWidth: 300,
+  background: "red",
+  height: 400,
 
   "@md": {
     width: 560,
@@ -55,13 +56,26 @@ const ImageWrapper = styled(motion.div, {
 
   "& img": {
     objectFit: "contain",
+
+    "@md": {
+      objectFit: "unset",
+    },
     width: "100%",
+    height: "100%",
   },
 });
 
 const TextWrapper = styled("div", {
   maxWidth: 600,
   border: " 4px solid white",
-  marginTop: 80,
-  padding: 24,
+  marginTop: 20,
+  padding: 10,
+
+  "@md": {
+    padding: 24,
+  },
+
+  "@lg": {
+    marginTop: 50,
+  },
 });
