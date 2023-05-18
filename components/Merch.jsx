@@ -1,9 +1,12 @@
 import { styled } from "@/stitches.config";
-import { SectionHeader } from ".";
+import { Button, Heading, MerchCard, SectionHeader, Text } from ".";
 import { Carousel } from "./Carousel";
+import useMeasure from "react-use-measure";
+import Image from "next/image";
+import { MERCH } from "@/lib/merch";
 
 export const Merch = () => {
-  const SCROLL = [1, 2, 3, 4, 5, 6];
+  const [ref, { width }] = useMeasure();
 
   return (
     <Wrapper>
@@ -12,9 +15,9 @@ export const Merch = () => {
         description="Visit our store and get your copy of special items we have prepared just for you!!"
       />
 
-      <Carousel scrollItems={SCROLL} scrollBy={400}>
-        {SCROLL.map((item, index) => (
-          <MapItem key={index}>{item}</MapItem>
+      <Carousel scrollItems={MERCH} scrollBy={width}>
+        {MERCH.map((item, index) => (
+          <MerchCard innerRef={ref} {...item} key={index} />
         ))}
       </Carousel>
     </Wrapper>
@@ -23,12 +26,4 @@ export const Merch = () => {
 
 const Wrapper = styled("section", {
   marginTop: 100,
-});
-
-const MapItem = styled("div", {
-  width: 300,
-  height: 300,
-  background: "blue",
-  flexShrink: 0,
-  scrollSnapAlign: "start",
 });

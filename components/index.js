@@ -1,6 +1,6 @@
+export * from "./About";
 export * from "./Advice";
 export * from "./AdviceCard";
-export * from "./About";
 export * from "./Button";
 export * from "./Carousel";
 export * from "./Container";
@@ -13,6 +13,7 @@ export * from "./HelpCard";
 export * from "./Hero";
 export * from "./Logo";
 export * from "./Merch";
+export * from "./MerchCard";
 export * from "./Navbar";
 export * from "./SectionHeader";
 export * from "./Sidebar";
