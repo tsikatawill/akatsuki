@@ -17,12 +17,13 @@ const Wrapper = styled(motion.button, {
   cursor: "pointer",
   display: "grid",
   placeContent: "center",
-  border: "none",
+  border: "1px solid transparent",
   borderRadius: "100px",
   outline: "none",
   background: "white",
   color: "black",
   fontFamily: "$PanchangB",
+  transition: "background 0.5s",
 
   variants: {
     color: {
@@ -30,10 +31,21 @@ const Wrapper = styled(motion.button, {
         color: "white",
         border: "1px solid white",
         backgroundColor: "$dark",
+
+        "&:hover": {
+          background: "White",
+          color: "$dark",
+        },
       },
       tomato: {
         color: "white",
         backgroundColor: "$red",
+
+        "&:hover": {
+          border: "1px solid $redHover",
+          color: "$red",
+          background: "transparent",
+        },
       },
     },
     roundness: {

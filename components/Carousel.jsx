@@ -3,22 +3,24 @@ import { styled } from "@/stitches.config";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ExploreCard } from ".";
 
 const DIRECTION_LEFT = -1;
 const DIRECTION_RIGHT = 1;
 
-export const ExploreCarousel = () => {
+export const Carousel = ({ children, scrollItems, scrollBy }) => {
   const scrollRef = useRef(null);
   const [activeCard, setActiveCard] = useState(0);
 
   useEffect(() => {
-    scrollRef.current.scrollTo(activeCard * 1000, 0);
-  }, [activeCard]);
+    scrollRef.current.scrollTo(activeCard * scrollBy, 0);
+  }, [activeCard, scrollBy]);
 
-  const controlScroll = useCallback((direction) => {
-    setActiveCard((prev) => Math.abs(prev + direction) % EXPLOREITEMS.length);
-  }, []);
+  const controlScroll = useCallback(
+    (direction) => {
+      setActiveCard((prev) => Math.abs(prev + direction) % scrollItems.length);
+    },
+    [scrollItems]
+  );
 
   useEffect(() => {
     const interval = setInterval(() => controlScroll(DIRECTION_RIGHT), 5000);
@@ -28,10 +30,8 @@ export const ExploreCarousel = () => {
   return (
     <Wrapper>
       <CarouselWrapper className="hidden-scrollbar" ref={scrollRef}>
-        <CarouselAnimWrapper initial={{ x: 0 }}>
-          {EXPLOREITEMS.map((item) => (
-            <ExploreCard key={item.title} {...item} />
-          ))}
+        <CarouselAnimWrapper>
+          {children}
 
           <ControlButtons>
             <Button
@@ -72,8 +72,12 @@ const Wrapper = styled("div", {
 const CarouselWrapper = styled("div", {
   overflow: "scroll",
   marginTop: 100,
-  scrollSnapType: "x",
+  scrollSnapType: "x mandatory",
   scrollBehavior: "smooth",
+
+  "@md": {
+    scrollPaddingLeft: 50,
+  },
 });
 
 const CarouselAnimWrapper = styled(motion.div, {

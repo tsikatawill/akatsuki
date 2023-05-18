@@ -3,17 +3,21 @@ import { HEADBANDS } from "@/lib/headbands";
 import { styled } from "@/stitches.config";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import useMeasure from "react-use-measure";
 
 export const HeadbandRow = ({
   headbands = HEADBANDS,
   scrollFrom = "right",
   delay = false,
 }) => {
+  const [ref, bounds] = useMeasure();
+
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <ScrollAnimationWrapper
-        variants={scrollX(scrollFrom, delay)}
+        variants={scrollX}
         animate="animate"
+        custom={{ delay, scrollFrom, bounds: bounds.width }}
       >
         {headbands.map((band) => (
           <ImageWrapper key={band.name}>
