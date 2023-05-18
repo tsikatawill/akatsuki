@@ -15,6 +15,7 @@ export * from "./Logo";
 export * from "./Merch";
 export * from "./MerchCard";
 export * from "./Navbar";
+export * from "./Newsletter";
 export * from "./SectionHeader";
 export * from "./Sidebar";
 export * from "./Text";

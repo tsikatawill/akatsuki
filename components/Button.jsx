@@ -53,5 +53,15 @@ const Wrapper = styled(motion.button, {
         borderRadius: "50%",
       },
     },
+
+    huge: {
+      true: {
+        height: 58,
+
+        "@sm": {
+          fontSize: "20px",
+        },
+      },
+    },
   },
 });
