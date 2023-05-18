@@ -20,7 +20,7 @@ export default function Home() {
         <meta content="Akatsuki" />
         <meta name="image" content="https://i.postimg.cc/PJ2kNb1V/hero.jpg" />
         <meta
-          name="property"
+          name="description"
           content="Safe haven for rogue ninjas from all corners of the world for tha sake of peace."
         />
         <meta name="url" content="https://akatsuki-azure.vercel.app" />
