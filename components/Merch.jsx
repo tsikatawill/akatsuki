@@ -2,7 +2,6 @@ import { styled } from "@/stitches.config";
 import { Button, Heading, MerchCard, SectionHeader, Text } from ".";
 import { Carousel } from "./Carousel";
 import useMeasure from "react-use-measure";
-import Image from "next/image";
 import { MERCH } from "@/lib/merch";
 
 export const Merch = () => {
