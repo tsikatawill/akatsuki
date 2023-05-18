@@ -22,8 +22,9 @@ export default function Home() {
           name="description"
           content="Safe haven for rogue ninjas from all corners of the world for tha sake of peace."
         />
+        <meta name="image" content="/images/hero.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/cloud.png" />
       </Head>
 
       <Navbar />
