@@ -17,14 +17,23 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Akatsuki</title>
+        <meta property="og:title" content="Akatsuki" />
+        <meta name="image" property="og:image" content="/images/hero.jpg" />
         <meta
-          name="description"
+          name="property"
+          property="og:description"
           content="Safe haven for rogue ninjas from all corners of the world for tha sake of peace."
         />
-        <meta name="image" content="/images/hero.jpg" />
+        <meta
+          name="url"
+          property="og:url"
+          content="https://akatsuki-azure.vercel.app"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <link rel="icon" href="/images/cloud.png" />
+
+        <title>Akatsuki</title>
       </Head>
 
       <Navbar />
