@@ -1,6 +1,6 @@
 import { NavbarBg, slideIn } from "@/lib/animations";
 import { styled } from "@/stitches.config";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "./Button";
 
 export const Sidebar = ({ children, handleClose, show }) => {
