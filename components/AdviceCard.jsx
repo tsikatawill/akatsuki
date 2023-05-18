@@ -46,8 +46,11 @@ const Wrapper = styled(motion.div, {
 });
 
 const ImageWrapper = styled(motion.div, {
-  background: "red",
   height: 400,
+
+  "@sm": {
+    height: 600,
+  },
 
   "@md": {
     width: 560,
